@@ -1,9 +1,10 @@
 var express = require('express');
 var app = express();
+var path = require ("path");
 
 app.get("/", function(req, resp){
 	console.log("homepage sent" )
-	resp.sendFile("/index.html")
+	resp.sendFile(path.join(__dirname + "/index.html"))
 });
 
 var port = process.env.PORT || 8080;
